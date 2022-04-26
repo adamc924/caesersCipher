@@ -1,0 +1,18 @@
+function rot13(str) {
+  var newStr = [];
+  var code = "";
+  for (let i = 0; i < str.length; i++){
+    if ((/[A-Z]/).test(str.charAt(i))){
+      code = str.charCodeAt(i) + 13;
+      if (code > 90){
+        code = (code - 90) + 64;
+      }
+      newStr.push(String.fromCharCode(code))
+  } else {
+    newStr.push(str.charAt(i));
+  }
+  
+  }
+  console.log(newStr.join(""));
+  return newStr.join("");
+}
